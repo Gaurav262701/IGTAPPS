@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    {% for message in messages %}
+    <div class="alert alert-{{mesaage.tags}} alert-dismissible fade show" role="alert">
+        <strong>message:</strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+
+    <h3>sign in</h3>
+    <form action="" method="post">
+    {% csrf_token %}
+        <label for="">Username</label>
+        <input type="text" id="UserName" name="UserName" placeholder="Enter your Username" Required>
+        <br>
+        <label for="">Password</label>
+        <input type="password" id="Pass1" name="Pass1" placeholder="Enter your Password" Required>
+        <br>
+
+        <button type="submit">Sign In</button>
+    </form>
+</body>
+</html>
